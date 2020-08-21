@@ -17,8 +17,8 @@ static const int smartgaps          = 1;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "SouceCodePro Nerd Font Mono:size=14" };
-static const char dmenufont[]       = "SouceCodePro Nerd Font Mono:size=14";
+static const char *fonts[]          = { "SouceCodePro Nerd Font Mono:size=16" };
+static const char dmenufont[]       = "SouceCodePro Nerd Font Mono:size=16";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -89,7 +89,7 @@ static const char *upvol[]   = { "/home/lhy/scripts/vol-up.sh",  NULL };
 static const char *downvol[] = { "/home/lhy/scripts/vol-down.sh",  NULL };
 static const char *mutevol[] = { "/home/lhy/scripts/vol-toggle.sh",  NULL };
 
-//static const char *wpcmd[]  = { "/home/lhy/scripts/wp-change.sh", NULL };
+static const char *wpcmd[]  = { "/home/lhy/scripts/wp-change.sh", NULL };
 static const char *sktogglecmd[]  = { "/home/lhy/scripts/sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
@@ -116,7 +116,7 @@ static Key keys[] = {
 	{ MODKEY,              XK_bracketleft,          spawn,          {.v = downvol } },
 	{ MODKEY,              XK_backslash,            spawn,          {.v = mutevol } },
 	{ MODKEY,              XK_bracketright,         spawn,          {.v = upvol   } },
-//	{ MODKEY,              XK_b,                    spawn,          {.v = wpcmd } },
+	{ MODKEY,              XK_b,                    spawn,          {.v = wpcmd } },
 	{ 0,                   XK_Print,                spawn,          {.v = screenshotcmd } },
 	{ MODKEY|ShiftMask,    XK_j,                    rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,    XK_k,                    rotatestack,    {.i = -1 } },
