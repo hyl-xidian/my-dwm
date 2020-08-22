@@ -10,7 +10,9 @@ dwm 安装：
     git clone https://git.suckless.org/dwm
 
 TheCW大佬的配置版本在[这里](https://github.com/theniceboy/dwm)
-大佬的脚本存放在 [此仓库](https://github.com/theniceboy/scripts) 
+大佬的脚本存放在 [此仓库](https://github.com/theniceboy/scripts)
+
+
 向偶然看到这个页面的朋友安利一波
 ------------
 TheCW是一名b站up主，现在主要发布一些关于linux的教学和安利视频，干活满满，还是个学霸加帅哥！
