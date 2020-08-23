@@ -95,10 +95,10 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
 //static const char *setcolemakcmd[]  = { "/home/lhy/scripts/setxmodmap-colemak.sh", NULL };
-static const char *setqwertycmd[]  = { "/home/lhy/scripts/setxmodmap-qwerty.sh", NULL };
 
 static const char *suspendcmd[]  = { "/home/lhy/scripts/suspend.sh", NULL };
-
+static const char *TouchpadEnabledCmd[]  = { "/home/lhy/scripts/touchpad-enabled.sh", NULL };
+static const char *TouchpadDisabledCmd[]  = { "/home/lhy/scripts/touchpad-disabled.sh", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
 static Key keys[] = {
@@ -107,7 +107,6 @@ static Key keys[] = {
 	{ MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,  XK_l,                    spawn,          {.v = slockcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
-	{ MODKEY|ShiftMask,    XK_w,                    spawn,          {.v = setqwertycmd } },
 //	{ MODKEY|ShiftMask,    XK_m,                    spawn,          {.v = setcolemakcmd } },
 	{ MODKEY|ShiftMask,    XK_r,                    spawn,          {.v = suspendcmd } },
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
@@ -118,6 +117,9 @@ static Key keys[] = {
 	{ MODKEY,              XK_bracketright,         spawn,          {.v = upvol   } },
 	{ MODKEY,              XK_b,                    spawn,          {.v = wpcmd } },
 	{ 0,                   XK_Print,                spawn,          {.v = screenshotcmd } },
+    { MODKEY,              XK_apostrophe,           togglescratch,  {.v = scratchpadcmd } }, // open a new window in the screen center
+	{ MODKEY,              XK_t,                    spawn,          {.v = TouchpadDisabledCmd } },
+	{ MODKEY|ShiftMask,    XK_t,                    spawn,          {.v = TouchpadEnabledCmd } },
 	{ MODKEY|ShiftMask,    XK_j,                    rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,    XK_k,                    rotatestack,    {.i = -1 } },
 	{ MODKEY,              XK_j,                    focusstack,     {.i = +1 } },
@@ -142,7 +144,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_e,                    fullscreen,     {0} },
 	{ MODKEY,              XK_space,                setlayout,      {0} },
 	{ MODKEY|ShiftMask,    XK_space,                togglefloating, {0} },
-	{ MODKEY,              XK_apostrophe,           togglescratch,  {.v = scratchpadcmd } },
 	TAGKEYS(               XK_1,                      0)
 	TAGKEYS(               XK_2,                      1)
 	TAGKEYS(               XK_3,                      2)
