@@ -84,13 +84,13 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
+static const char *slockcmd[]  = { "slock", NULL };
 
 static const char *upvol[]   = { "/home/lhy/scripts/vol-up.sh",  NULL };
 static const char *downvol[] = { "/home/lhy/scripts/vol-down.sh",  NULL };
 static const char *mutevol[] = { "/home/lhy/scripts/vol-toggle.sh",  NULL };
 
 static const char *wpcmd[]  = { "/home/lhy/scripts/wp-change.sh", NULL };
-//static const char *sktogglecmd[]  = { "/home/lhy/scripts/sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
@@ -105,11 +105,11 @@ static Key keys[] = {
 	/* modifier            key                      function        argument */
 	{ MODKEY,              XK_d,                    spawn,          {.v = dmenucmd } },
 	{ MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
+	{ MODKEY|ControlMask,  XK_l,                    spawn,          {.v = slockcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,    XK_w,                    spawn,          {.v = setqwertycmd } },
 //	{ MODKEY|ShiftMask,    XK_m,                    spawn,          {.v = setcolemakcmd } },
 	{ MODKEY|ShiftMask,    XK_r,                    spawn,          {.v = suspendcmd } },
-//	{ MODKEY|ControlMask,  XK_d,                    spawn,          {.v = sktogglecmd } },
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                   XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,                   XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
@@ -143,12 +143,6 @@ static Key keys[] = {
 	{ MODKEY,              XK_space,                setlayout,      {0} },
 	{ MODKEY|ShiftMask,    XK_space,                togglefloating, {0} },
 	{ MODKEY,              XK_apostrophe,           togglescratch,  {.v = scratchpadcmd } },
-//	{ MODKEY,              XK_0,                    view,           {.ui = ~0 } },
-//	{ MODKEY|ShiftMask,    XK_0,                    tag,            {.ui = ~0 } },
-//	{ MODKEY,              XK_comma,                focusmon,       {.i = -1 } },
-//	{ MODKEY,              XK_period,               focusmon,       {.i = +1 } },
-//	{ MODKEY|ShiftMask,    XK_comma,                tagmon,         {.i = -1 } },
-//	{ MODKEY|ShiftMask,    XK_period,               tagmon,         {.i = +1 } },
 	TAGKEYS(               XK_1,                      0)
 	TAGKEYS(               XK_2,                      1)
 	TAGKEYS(               XK_3,                      2)
