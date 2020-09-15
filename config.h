@@ -83,7 +83,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *browsercmd[]  = { "chromium", NULL };
+static const char *browsercmd[]  = { "firefox", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 
 static const char *upvol[]   = { "/home/lhy/scripts/vol-up.sh",  NULL };
@@ -95,8 +95,8 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
 //static const char *setcolemakcmd[]  = { "/home/lhy/scripts/setxmodmap-colemak.sh", NULL };
+//static const char *suspendcmd[]  = { "/home/lhy/scripts/suspend.sh", NULL };
 
-static const char *suspendcmd[]  = { "/home/lhy/scripts/suspend.sh", NULL };
 static const char *TouchpadEnabledCmd[]  = { "/home/lhy/scripts/touchpad-enabled.sh", NULL };
 static const char *TouchpadDisabledCmd[]  = { "/home/lhy/scripts/touchpad-disabled.sh", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
@@ -108,7 +108,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,  XK_l,                    spawn,          {.v = slockcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
 //	{ MODKEY|ShiftMask,    XK_m,                    spawn,          {.v = setcolemakcmd } },
-	{ MODKEY|ShiftMask,    XK_r,                    spawn,          {.v = suspendcmd } },
+//	{ MODKEY|ShiftMask,    XK_r,                    spawn,          {.v = suspendcmd } },
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                   XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,                   XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
