@@ -96,6 +96,7 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24"
 
 //static const char *setcolemakcmd[]  = { "/home/lhy/scripts/setxmodmap-colemak.sh", NULL };
 //static const char *suspendcmd[]  = { "/home/lhy/scripts/suspend.sh", NULL };
+static const char *suspendcmd[]  = { "systemctl", "suspend", NULL };
 
 static const char *TouchpadEnabledCmd[]  = { "/home/lhy/scripts/touchpad-enabled.sh", NULL };
 static const char *TouchpadDisabledCmd[]  = { "/home/lhy/scripts/touchpad-disabled.sh", NULL };
@@ -108,7 +109,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,  XK_l,                    spawn,          {.v = slockcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
 //	{ MODKEY|ShiftMask,    XK_m,                    spawn,          {.v = setcolemakcmd } },
-//	{ MODKEY|ShiftMask,    XK_r,                    spawn,          {.v = suspendcmd } },
+	{ MODKEY|ShiftMask,    XK_r,                    spawn,          {.v = suspendcmd } },
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                   XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,                   XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
@@ -124,7 +125,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_k,                    rotatestack,    {.i = -1 } },
 	{ MODKEY,              XK_j,                    focusstack,     {.i = +1 } },
 	{ MODKEY,              XK_k,                    focusstack,     {.i = -1 } },
-{ MODKEY,              XK_h,                    viewtoleft,     {0} },
+    { MODKEY,              XK_h,                    viewtoleft,     {0} },
 	{ MODKEY,              XK_l,                    viewtoright,    {0} },
 	{ MODKEY|ShiftMask,    XK_h,                    tagtoleft,      {0} },
 	{ MODKEY|ShiftMask,    XK_l,                    tagtoright,     {0} },
