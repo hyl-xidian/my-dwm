@@ -96,7 +96,6 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
 //static const char *setcolemakcmd[]  = { "/home/lhy/scripts/setxmodmap-colemak.sh", NULL };
-//static const char *suspendcmd[]  = { "/home/lhy/scripts/suspend.sh", NULL };
 static const char *suspendcmd[]  = { "systemctl", "suspend", NULL };
 
 static const char *TouchpadEnabledCmd[]  = { "/home/lhy/scripts/touchpad-enabled.sh", NULL };
@@ -110,7 +109,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,  XK_l,                    spawn,          {.v = slockcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
 //	{ MODKEY|ShiftMask,    XK_m,                    spawn,          {.v = setcolemakcmd } },
-	{ MODKEY|ShiftMask,    XK_r,                    spawn,          {.v = suspendcmd } },
+	{ MODKEY|ControlMask,  XK_r,                    spawn,          {.v = suspendcmd } },
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                   XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,                   XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
