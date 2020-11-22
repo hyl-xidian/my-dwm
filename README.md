@@ -27,8 +27,7 @@ TheCW大佬用的是colemak键盘，并非常人用的qwert。
 
 个人dwm 快捷键备忘
 ---
-
-### 一、窗口操作相关
+### 一、基础操作
 | 快捷键                   | 操作                                         |
 |--------------------------|----------------------------------------------|
 | win + j                  | 顺时针切换focus的窗口                        |
@@ -37,36 +36,41 @@ TheCW大佬用的是colemak键盘，并非常人用的qwert。
 | win + h/l                | 向左/右 切换focus的桌面（标签页tap）         |
 | win + shift + h/l        | 将focus的窗口 移动到左/右侧的桌面中          |
 | 新的排列顺序遵从栈的规则 |                                              |
-| win + u/i                | 改变focus的窗口的尺寸                        |
-| win + shift + u/i        | 改变窗口布局( 可改成垂直布局*慎用！)         |
-| win + m                  | 将focus的窗口占据整个屏幕                    |
-| win + space              | 恢复原有的平铺格局                           |
-| win + n                  | 隐藏focus的窗口                              |
-| win + shift + n          | 恢复隐藏的窗口                               |
-| win + '                  | 屏幕中间打开一个窗口(再次按下则恢复)         |
-| win + p                  | 隐藏其他所有的窗口                           |
-| win + shift + p          | 恢复隐藏的窗口                               |
 | win + 数字               | 切换到对应的标签页面                         |
 | win + shift + num        | 将focus的页面切换到第num桌面的主窗口位置     |
+| win + shift + u/i        | 改变窗口布局( 可改成垂直布局慎用！)          |
+| win + u/i                | 改变focus的窗口的尺寸                        |
+| win + ,/.                 | focus到前一个或下一个显示器                  |
+| win + shift + ,/.        | 将当前focus的窗口移动到前一个或下一个显示器  |
 
-### 二、其他操作
-| 快捷键          | 功能                  |
-|-----------------|-----------------------|
-| win + q         | 关闭一个窗口          |
-| win + d         | 打开dmenu选择启动程序 |
-| win + ctrl + q  | 关闭xserver 慎用！！  |
-| win + crtl + l  | 锁屏幕                |
-| win + shift + r | suspend               |
-| win + b         | 切换壁纸              |
-| win + [         | 减少音量              |
-| win + \         | 静音                  |
-| win + t         | 关闭触摸板            |
-| win + shift + t | 打开触摸板            |
+### 二、进阶操作
+| 快捷键          | 操作                                 |
+|-----------------|--------------------------------------|
+| win + m         | 将focus的窗口占据整个屏幕            |
+| win + space     | 恢复原有的平铺格局                   |
+| win + n         | 隐藏focus的窗口                      |
+| win + shift + n | 恢复隐藏的窗口                       |
+| win + '         | 屏幕中间打开一个窗口(再次按下则恢复) |
+| win + p         | 隐藏其他所有的窗口                   |
+| win + shift + p | 恢复隐藏的窗口                       |
+| win + shift + e | 将当前focus窗口全屏                  |
 
-### 三、改动备忘
-1. 开启X后会自动将caps大写锁定键跟esc互换
+### 三、其他操作
+| 快捷键          | 功能                 |
+|-----------------|----------------------|
+| win + q         | 关闭一个窗口         |
+| win + ctrl + q  | 关闭xserver 慎用！！ |
+| win + crtl + l  | 锁屏幕               |
+| win + crtl + r | suspend              |
+| win + b         | 切换壁纸             |
+| win + [         | 减少音量             |
+| win + \         | 静音                 |
+| win + t         | 关闭触摸板           |
+| win + shift + t | 打开触摸板           |
+
+### 四、改动备忘
+
+1. 开启Xserver后会自动将caps大写锁定键跟esc互换----->
     - 将caps-swapescape.sh添加到了auto_start.sh中
-2. 添加了触摸板禁用和启用的脚本
+2. 添加了触摸板禁用和启用的脚本 ----->
     - 暂时定为快捷键win + t 和win + shift + t
-3. 有两个脚本暂时用不到dualmon.sh ---> 多显示器
-    - setxmodmap-colemak.sh ---> colemak键盘
