@@ -8,7 +8,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 0;     /* 0 means no systray */
+static const int showsystray        = 1;     /* 0 means no systray */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
@@ -42,7 +42,7 @@ static const unsigned int alphas[][3]      = {
 /* tagging */
 //static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 //static const char *tags[] = { "\u4e00", "\u4e8c", "\u4e09", "\u56db", "\u4e94", "\u516d", "\u4e03", "\u516b", "\u4e5d" };
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8-Cmus", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -100,11 +100,22 @@ static const char *suspendcmd[]  = { "systemctl", "suspend", NULL };
 
 static const char *TouchpadEnabledCmd[]  = { "/home/lhy/scripts/touchpad-enabled.sh", NULL };
 static const char *TouchpadDisabledCmd[]  = { "/home/lhy/scripts/touchpad-disabled.sh", NULL };
+static const char *TouchpadToggleCmd[]  = { "/home/lhy/scripts/touchpad-toggle.sh", NULL };
+static const char *CmusPlayOrPause[]  = { "/home/lhy/scripts/cmus-functions/cmus-play-pause.sh", NULL };
+static const char *CmusVolUp[]  = { "/home/lhy/scripts/cmus-functions/cmus-vol-up.sh", NULL };
+static const char *CmusVolDown[]  = { "/home/lhy/scripts/cmus-functions/cmus-vol-down.sh", NULL };
+static const char *CmusPreSong[]  = { "/home/lhy/scripts/cmus-functions/cmus-pre-song.sh", NULL };
+static const char *CmusNextSong[]  = { "/home/lhy/scripts/cmus-functions/cmus-next-song.sh", NULL };
+static const char *CmusShuffleToggle[]  = { "/home/lhy/scripts/cmus-functions/cmus-Shuffle-toggle.sh", NULL };
+static const char *CmusRepeatToggle[]  = { "/home/lhy/scripts/cmus-functions/cmus-Repeat-toggle.sh", NULL };
+static const char *CmusLyrics[]  = { "/home/lhy/scripts/cmus-functions/cmus-osdlyrics.sh", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
+static const char *FilesNavigationCmd[] = { "qtfm", NULL };
 
 static Key keys[] = {
 	/* modifier            key                      function        argument */
 	{ MODKEY,              XK_d,                    spawn,          {.v = dmenucmd } },
+	{ MODKEY,              XK_e,                    spawn,          {.v = FilesNavigationCmd } },
 	{ MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,  XK_l,                    spawn,          {.v = slockcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
@@ -120,8 +131,17 @@ static Key keys[] = {
 	{ MODKEY,              XK_b,                    spawn,          {.v = wpcmd } },
 	{ 0,                   XK_Print,                spawn,          {.v = screenshotcmd } },
     { MODKEY,              XK_apostrophe,           togglescratch,  {.v = scratchpadcmd } }, // open a new window in the screen center
-	{ MODKEY,              XK_t,                    spawn,          {.v = TouchpadDisabledCmd } },
-	{ MODKEY|ShiftMask,    XK_t,                    spawn,          {.v = TouchpadEnabledCmd } },
+//	{ MODKEY,              XK_t,                    spawn,          {.v = TouchpadDisabledCmd } },
+//	{ MODKEY|ShiftMask,    XK_t,                    spawn,          {.v = TouchpadEnabledCmd } },
+	{ MODKEY,              XK_t,                    spawn,          {.v = TouchpadToggleCmd } },
+	{ ControlMask|ShiftMask,    XK_p,                    spawn,          {.v = CmusPlayOrPause } },
+	{ ControlMask|ShiftMask,    XK_s,                    spawn,          {.v = CmusShuffleToggle } },
+	{ ControlMask|ShiftMask,    XK_r,                    spawn,          {.v = CmusRepeatToggle } },
+	{ ControlMask|ShiftMask,    XK_l,                    spawn,          {.v = CmusLyrics } },
+	{ ControlMask|ShiftMask,    XK_Up,                   spawn,          {.v = CmusVolUp } },
+	{ ControlMask|ShiftMask,    XK_Down,                 spawn,          {.v = CmusVolDown } },
+	{ ControlMask|ShiftMask,    XK_Left,                 spawn,          {.v = CmusPreSong } },
+	{ ControlMask|ShiftMask,    XK_Right,                  spawn,          {.v = CmusNextSong } },
 	{ MODKEY|ShiftMask,    XK_j,                    rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,    XK_k,                    rotatestack,    {.i = -1 } },
 	{ MODKEY,              XK_j,                    focusstack,     {.i = +1 } },
