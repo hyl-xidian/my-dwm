@@ -113,11 +113,13 @@ static const char *CmusRepeatToggle[]  = { "/home/lhy/scripts/cmus-functions/cmu
 static const char *CmusLyrics[]  = { "/home/lhy/scripts/cmus-functions/cmus-osdlyrics.sh", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static const char *FilesNavigationCmd[] = { "thunar", NULL };
+static const char *FilesSearchCmd[] = { "fsearch", NULL };
 
 static Key keys[] = {
 	/* modifier            key                      function        argument */
 	{ MODKEY,              XK_d,                    spawn,          {.v = dmenucmd } },
 	{ MODKEY,              XK_e,                    spawn,          {.v = FilesNavigationCmd } },
+	{ MODKEY,              XK_s,                    spawn,          {.v = FilesSearchCmd } },
 	{ MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,  XK_l,                    spawn,          {.v = slockcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
